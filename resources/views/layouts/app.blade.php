@@ -12,11 +12,12 @@
     <link href="{{ asset('dist/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('dist/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('dist/css/ruang-admin.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dist/css/index.css') }}" rel="stylesheet">
     {{ ($head) ?? '' }}
 </head>
 
 <body id="page-top">
-    <div id="wrapper">
+    <div id="wrapper" class="a">
 
         {{-- sidebar --}}
         <x-sidebar></x-sidebar>

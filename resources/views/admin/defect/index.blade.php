@@ -52,7 +52,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="nama">Kode Defect</label>
+						<label for="kode">Kode Defect</label>
 						<input type="text" class="form-control" name="kode">
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label for="nama">Kode Defect</label>
+						<label for="kode">Kode Defect</label>
 						<input type="text" class="form-control" name="kode">
 					</div>
 				</div>
@@ -154,11 +154,13 @@
 				const id = $(this).data('id')
 
 				$.get(`{{ route('admin.defect.json') }}?id=${id}`, function(res) {
+
+					console.log(res);
 					$('#edit-defect input[name="id"]').val(res.id)
 					$('#edit-defect input[name="nama"]').val(res.nama)
 					$('#edit-defect input[name="kode"]').val(res.kode)
-					$('#edit-defect textarea').text(res.penyebab)
-					$('#edit-defect textarea').text(res.solusi)
+					$('#edit-defect textarea[name="penyebab"]').text(res.penyebab);
+					$('#edit-defect textarea[name="solusi"]').text(res.solusi);
 
 					$('#edit-defect').modal('show')
 				})
